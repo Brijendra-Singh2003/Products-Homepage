@@ -9,11 +9,11 @@ export function ItemCard(item: Product) {
     >
       <a className="flex flex-col col-span-1 gap-2">
         <img
+          className="w-full aspect-[3/4] object-contain"
+          alt=""
           src={item.image}
-          alt={item.name + " image"}
-          className="w-full aspect-[3/4] object-contain mx-auto"
         />
-        <div className="col-span-1 h-full px-2 flex flex-col gap-1 relative">
+        <div className="col-span-1 h-fit px-2 flex flex-col gap-1 relative">
           <h3 className="line-clamp-1 text-xs md:text-sm">
             {item.name.toUpperCase()}
           </h3>
@@ -34,10 +34,10 @@ export function ItemCard(item: Product) {
 }
 
 export const ItemCardSkeleton = (
-  <div className="flex w-full flex-col justify-between h-full mx-auto sm:h-[30rem] bg-card rounded-md border shadow max-w-64 flex-grow col-span-1 gap-2 lg:hover:scale-105 lg:hover:-translate-y-3 transition">
-    <a className="flex flex-col col-span-1 gap-2">
-      <div className="w-full aspect-[3/4] mx-auto bg-gray-300 animate-pulse" />
-      <div className="col-span-1 h-full px-2 flex flex-col gap-1 relative">
+  <div className="flex w-full flex-col h-full mx-auto sm:h-[30rem] bg-card rounded-md border shadow max-w-64 flex-grow col-span-1 gap-2">
+    <a className="flex flex-col gap-2">
+      <div className="w-full flex-grow aspect-[3/4] mx-auto bg-gray-300 animate-pulse" />
+      <div className="h-fit px-2 flex flex-col gap-1 relative">
         <h3 className="line-clamp-1 text-xs md:text-sm">
           <div className="w-full h-4 rounded bg-gray-300 animate-pulse" />
         </h3>
